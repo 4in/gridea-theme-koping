@@ -1,0 +1,112 @@
+@breakpoint_sm: 576px; // Small devices (landscape phones, 576px and up)
+@breakpoint_md: 768px; // Medium devices (tablets, 768px and up)
+@breakpoint_lg: 992px; // Large devices (desktops, 992px and up)
+@breakpoint_xl: 1200px; // Extra large devices (large desktops, 1200px and up)
+
+// 侧边栏样式
+.main {
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #fff;
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100vh;
+    border-right: 1px solid #f1f2f3;
+    background: #fff;
+    transition: all .3s cubic-bezier(.78, .14, .15, .86);
+    z-index: 99;
+
+    .site-header {
+      background: #fff;
+    }
+
+    .site-footer.fix {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #drawer-handler {
+      display: none;
+      position: fixed;
+      width: 41px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      top: 72px;
+      right: -40px;
+      background: #fff;
+      border-radius: 0 4px 4px 0;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, .15);
+      cursor: pointer;
+      z-index: -1;
+
+      i {
+        line-height: 40px;
+      }
+    }
+
+    &.show {
+      transform: translateX(0);
+
+      & + .main-content {
+        transform: translateX(300px);
+
+        &::after {
+          width: 100%;
+          height: 100%;
+          opacity: .3;
+        }
+      }
+    }
+
+    @media screen and (max-width: @breakpoint_md) {
+      transform: translateX(-100%);
+      #drawer-handler {
+        display: block;
+      }
+
+      .site-header .menu-container {
+        display: block;
+
+        a.menu {
+          display: block;
+          padding: 16px 0;
+        }
+      }
+    }
+
+  }
+
+  .main-content {
+    flex: 1;
+    display: inline-flex;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding-left: 300px;
+    flex-direction: column;
+    transition: all .3s cubic-bezier(.78, .14, .15, .86);
+
+    &::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #000;
+      opacity: 0;
+      transition: opacity .3s linear;
+    }
+
+    @media screen and (max-width: @breakpoint_md) {
+      padding-left: 0;
+    }
+  }
+}

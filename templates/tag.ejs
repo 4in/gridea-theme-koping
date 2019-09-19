@@ -1,0 +1,17 @@
+<html lang="zh">
+    <head>
+        <%- include('./includes/head', { siteTitle: `${tag.name} | ${themeConfig.siteName}` }) %>
+    </head>
+    <body>
+        <div class="main">
+            <%- include('./includes/sidebar') %>
+            <div class="main-content">
+                <div class="current-tag-container">
+                    <h2 class="title">标签：# <%= tag.name %></h2>
+                </div>
+                <%- include('./includes/post-list') %>
+                <%- include('./includes/pagination') %>
+            </div>
+        </div>
+    </body>
+</html>

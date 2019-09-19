@@ -1,0 +1,85 @@
+<html lang="zh">
+    <head>
+        <%- include('./includes/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+    </head>
+    <body>
+        <div class="main">
+            <%- include('./includes/sidebar') %>
+            <div class="main-content">
+                <div class="post-detail">
+                    <article class="post">
+                        <h2 class="post-title"><%= post.title %></h2>
+                        <div class="post-info">
+                            <span><%= post.dateFormat %></span>
+                            <span><%= post.stats.text %></span>
+                            <% post.tags.forEach(function(tag) { %>
+                                <a href="<%= tag.link %>" class="post-tag"># <%= tag.name %></a>
+                            <% }); %>
+                        </div>
+                        <% if (themeConfig.showFeatureImage && post.feature) { %>
+                            <img class="post-feature-image" src="<%= post.feature %>" alt="">
+                        <% } %>
+                        <div class="post-content-wrapper">
+                            <div class="post-content">
+                                <%- post.content %>
+                            </div>
+                            <div class="toc-container">
+                                <%- post.toc %>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <% if (post.nextPost && !post.hideInList) { %>
+                    <div class="next-post">
+                        <div class="next">下一篇</div>
+                        <a href="<%= post.nextPost.link %>">
+                            <h3 class="post-title">
+                                <%= post.nextPost.title %>
+                            </h3>
+                        </a>
+                    </div>
+                <% } %>
+
+                <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+                    <% if (commentSetting.commentPlatform === 'gitalk') { %>
+                        <%- include('./includes/gitalk') %>
+                    <% } %>
+
+                    <% if (commentSetting.commentPlatform === 'disqus') { %>
+                        <%- include('./includes/disqus') %>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </body>
+    <script>
+      hljs.initHighlightingOnLoad();
+
+      var mainNavLinks = document.querySelectorAll('.markdownIt-TOC a');
+
+      window.addEventListener('scroll', function () {
+        var fromTop = window.scrollY;
+        mainNavLinks.forEach((link, index) => {
+          var section = document.getElementById(decodeURI(link.hash).substring(1));
+          var nextSection = null;
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add('current');
+              } else {
+                link.classList.remove('current');
+              }
+            } else {
+              link.classList.add('current');
+            }
+          } else {
+            link.classList.remove('current');
+          }
+        });
+      });
+    </script>
+</html>

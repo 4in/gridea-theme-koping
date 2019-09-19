@@ -1,0 +1,17 @@
+<html lang="zh">
+    <head>
+        <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+    </head>
+    <body>
+        <div class="main">
+            <%- include('./includes/sidebar') %>
+            <div class="main-content">
+                <div class="tags-container">
+                    <% tags.forEach(function(tag) { %>
+                        <a class="tag" href="<%= tag.link %>"><%= tag.name %></a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

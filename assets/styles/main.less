@@ -1,0 +1,40 @@
+@import './lib/modern-normalize';
+@import './lib/colors';
+@import './abstracts/varibles';
+
+html {
+  font-size: 58%;
+}
+
+body {
+  color: rgba(0, 0, 0, .86);
+  font: 400 16px/1.42 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+  letter-spacing: .05em;
+  overflow-x: hidden;
+}
+
+a {
+  color: rgba(0, 0, 0, .98);
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    color: @main-color;
+  }
+}
+
+body, div, a, p, ul, li, ol, h1, h2, h3, h4, h5, h6, table, tr, td {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import "sidebar";
+@import "./components/header.less";
+@import "./components/home.less";
+@import "./components/post.less";
+@import "./components/archives.less";
+@import "./components/tags.less";
+@import "./components/tag.less";
+@import "./components/about.less";
+@import "./components/footer.less";
