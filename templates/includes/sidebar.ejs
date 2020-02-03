@@ -1,20 +1,5 @@
 <div class="sidebar">
     <%- include('./header') %>
     <%- include('./footer') %>
-    <div id="drawer-handler"><i class="fa fa-bars"></i></div>
-    <script>
-      // 固定侧边栏footer
-      var sidebar = document.getElementsByClassName('sidebar')[0];
-      var header = sidebar.getElementsByClassName('site-header')[0];
-      var footer = sidebar.getElementsByClassName('site-footer')[0];
-      if (header.clientHeight + footer.clientHeight < sidebar.clientHeight) {
-        footer.classList.add('fix');
-      }
-      // 侧边栏开关
-      var handler = document.getElementById('drawer-handler');
-      handler.onclick = function () {
-        sidebar.classList.toggle('show');
-      };
-      var mask = document.getElementsByClassName('main-content')[0];
-    </script>
+    <div id="drawer-handler" style="user-select: none"><i class="fa fa-bars"></i></div>
 </div>

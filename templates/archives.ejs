@@ -1,14 +1,15 @@
 <html lang="zh">
-    <head>
-        <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
-    </head>
-    <body>
-        <div class="main">
-            <%- include('./includes/sidebar') %>
-            <div class="main-content">
-                <%- include('./includes/post-list-archives') %>
-                <%- include('./includes/pagination') %>
-            </div>
-        </div>
-    </body>
+<head>
+    <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+</head>
+<body>
+<div class="main">
+    <%- include('./includes/sidebar') %>
+    <div class="main-content">
+        <%- include('./includes/post-list-archives') %>
+        <%- include('./includes/pagination') %>
+    </div>
+</div>
+</body>
+<%- include('./includes/scripts') %>
 </html>
