@@ -18,3 +18,26 @@
     }
   });
 </script>
+<% if (site.customConfig.mtaSid) { %>
+<script>
+  var _mtac = {'senseQuery': 1};
+  (function() {
+    var mta = document.createElement('script');
+    mta.src = '//pingjs.qq.com/h5/stats.js?v2.0.4';
+    mta.setAttribute('name', 'MTAH5');
+    mta.setAttribute('sid', '<%- site.customConfig.mtaSid %>');
+    <% if (site.customConfig.mtaCid) { %>mta.setAttribute('cid', '<%- site.customConfig.mtaCid %>');<% } %>
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(mta, s);
+  })();
+</script>
+<% } %>
+<% if (site.customConfig.googleAnalytics) { %>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%- site.customConfig.googleAnalytics %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '<%- site.customConfig.googleAnalytics %>');
+</script>
+<% } %>

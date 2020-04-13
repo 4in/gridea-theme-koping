@@ -1,6 +1,6 @@
 {
   "name": "KoPing",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "author": "Tmk <tmk@li.cm>",
   "repository": "https://github.com/marco-tan/gridea-theme-koping",
   "customConfig": [
@@ -161,6 +161,30 @@
       "value": "",
       "type": "textarea",
       "note": ""
+    },
+    {
+      "name": "mtaSid",
+      "label": "腾讯MTA sid",
+      "group": "统计",
+      "value": "",
+      "type": "input",
+      "note": "必填，统计用的appid"
+    },
+    {
+      "name": "mtaCid",
+      "label": "腾讯MTA cid",
+      "group": "统计",
+      "value": "",
+      "type": "input",
+      "note": "如果开启自定义事件，此项目为必填，否则不填"
+    },
+    {
+      "name": "googleAnalytics",
+      "label": "Google Analytics",
+      "group": "统计",
+      "value": "",
+      "type": "input",
+      "note": "谷歌统计代码，格式: UA-1111111-1"
     }
   ]
 }
