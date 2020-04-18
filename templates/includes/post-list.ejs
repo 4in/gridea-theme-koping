@@ -16,6 +16,9 @@
             <% if (themeConfig.showFeatureImage && post.feature) { %>
                 <a href="<%= post.link %>" class="post-feature-image"
                    style="background-image: url('<%= post.feature %>');"></a>
+            <% } else if (site.customConfig.randomCover) { %>
+                <a href="<%= post.link %>" class="post-feature-image"
+                   style="background-image: url('https://picsum.photos/800/300?r=<%- Math.random() %>');"></a>
             <% } %>
             <div class="post-abstract">
                 <%- post.abstract %>

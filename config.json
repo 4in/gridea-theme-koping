@@ -5,6 +5,14 @@
   "repository": "https://github.com/marco-tan/gridea-theme-koping",
   "customConfig": [
     {
+      "name": "randomCover",
+      "label": "随机图片封面",
+      "group": "主题",
+      "value": true,
+      "type": "switch",
+      "note": "图片来自：https://picsum.photos/"
+    },
+    {
       "name": "github",
       "label": "Github",
       "group": "社交",
@@ -66,7 +74,7 @@
       "group": "统计",
       "value": "",
       "type": "input",
-      "note": "谷歌统计代码，格式: UA-1111111-1"
+      "note": "谷歌统计代码，格式: UA-xxxxxxx-x"
     }
   ]
 }

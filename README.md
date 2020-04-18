@@ -8,3 +8,4 @@
 - [x] 代码高亮 `highlightjs` (主题 `Atom One Dark`)
 - [x] 腾讯MTA统计
 - [x] Google Analytics统计
+- [x] 支持随机封面
