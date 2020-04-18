@@ -1,3 +1,5 @@
+@import "abstracts/varibles";
+
 @breakpoint_sm: 576px; // Small devices (landscape phones, 576px and up)
 @breakpoint_md: 768px; // Medium devices (tablets, 768px and up)
 @breakpoint_lg: 992px; // Large devices (desktops, 992px and up)
@@ -5,9 +7,8 @@
 
 // 侧边栏样式
 .main {
-  min-height: 100vh;
+  min-height: 100%;
   margin: 0 auto;
-  background: #fff;
 
   .sidebar {
     position: fixed;
@@ -15,14 +16,23 @@
     top: 0;
     bottom: 0;
     width: 300px;
-    height: 100vh;
-    border-right: 1px solid #f1f2f3;
-    background: #fff;
+    height: 100%;
+    background: #283149;
     transition: all .3s cubic-bezier(.78, .14, .15, .86);
     z-index: 99;
 
     .site-header {
-      background: #fff;
+
+    }
+
+    .social-container {
+      .fab {
+        transition: all .3s ease;
+
+        &:hover {
+          color: @sidebar-hl-color;
+        }
+      }
     }
 
     .site-footer.fix {
@@ -41,7 +51,7 @@
       text-align: center;
       top: 72px;
       right: -40px;
-      background: #fff;
+      background: #fafafa;
       border-radius: 0 4px 4px 0;
       box-shadow: 2px 0 8px rgba(0, 0, 0, .15);
       cursor: pointer;

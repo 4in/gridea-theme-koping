@@ -20,6 +20,7 @@
       padding: 24px 0;
       font-weight: 900;
       letter-spacing: 0.02em;
+      color: @dark-text-color;
     }
 
     .post-info {
@@ -52,6 +53,7 @@
     .post-content {
       width: 100%;
       font-family: "Droid Serif", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+      color: @default-text-color;
 
       h1 {
         font-size: 2.2em;
@@ -86,7 +88,6 @@
 
       h4 {
         font-weight: 700;
-        text-transform: uppercase;
         font-size: 1.1em;
         line-height: 1.4;
         margin: 10px 0 5px;
@@ -99,7 +100,6 @@
 
       h5 {
         font-weight: bold;
-        text-transform: uppercase;
       }
 
       h6 {
@@ -384,7 +384,7 @@
 
           &:before {
             border: transparent;
-            background-color: @oc-green-5;
+            background-color: #ff6d6d;
           }
 
           &:after {
@@ -458,6 +458,7 @@
     top: 32px;
     width: 200px;
     font-size: 12px;
+    transition: all .3s ease;
 
     &:before {
       content: "";
@@ -483,6 +484,7 @@
       padding: 4px;
       display: block;
       transition: all 0.3s;
+      border-radius: 2px;
 
       &:hover {
         background: #fafafa;
