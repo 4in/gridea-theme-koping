@@ -53,6 +53,14 @@
       "note": "链接地址"
     },
     {
+      "name": "baiduStatistics",
+      "label": "百度统计",
+      "group": "统计",
+      "value": "",
+      "type": "input",
+      "note": "百度统计代码，格式为32位的字符串"
+    },
+    {
       "name": "mtaSid",
       "label": "腾讯MTA sid",
       "group": "统计",

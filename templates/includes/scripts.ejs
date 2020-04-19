@@ -18,6 +18,17 @@
     }
   });
 </script>
+<% if (site.customConfig.baiduStatistics) { %>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?<%- site.customConfig.baiduStatistics %>";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<% } %>
 <% if (site.customConfig.mtaSid) { %>
 <script>
   var _mtac = {"performanceMonitor":1,"senseQuery":1};
