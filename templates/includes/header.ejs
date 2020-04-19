@@ -20,7 +20,7 @@
     <div class="social-container">
         <% ['github', 'twitter', 'weibo', 'zhihu', 'facebook'].forEach(function(item) { %>
             <% if (site.customConfig[item]) { %>
-                <a href="<%= site.customConfig[item] %>" target="_blank">
+                <a href="<%= site.customConfig[item] %>" rel="noopener noreferrer" target="_blank" title="<%= item %>">
                     <i class="fab fa-<%= item %>"></i>
                 </a>
             <% } %>
